@@ -20,7 +20,7 @@ const NavbarComponent = () => {
         })
     return (
         <>
-            <Navbar expand="lg" className={changeColor ? "color-active" :""}>
+            <Navbar expand="lg" className={changeColor ? "color-active" : ""}>
                 <Container>
                     <Navbar.Brand href="#home" className="fs-3 fw-bold">Jago Coding</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
