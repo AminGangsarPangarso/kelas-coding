@@ -1,7 +1,41 @@
+import { Container, Row, Col } from 'react-bootstrap';
+import Accordion from 'react-bootstrap/Accordion';
+import { faq } from '../data/index'
 const FaqComponent = () => {
-    return (  
-        <h1>ini bagian faq</h1>
+    return (
+        <>
+            <div className="Faq">
+                <Container>
+                    <Row>
+                        <Col>
+                            <h2 className='text-center fw-bold'>Pertanyaan yang sering ditanyakan </h2>
+                        </Col>
+                    </Row>
+                    <Row className='row-cols-lg-2 row-cols-1 g-4 pt-5'>
+                        {faq.map((data)=>{
+                            return(
+                                <Col key={data.i}>
+
+                                <Accordion className='shadow-m'>
+                                    <Accordion.Item eventKey={data.eventKey}>
+                                        <Accordion.Header>{data.title}</Accordion.Header>
+                                        <Accordion.Body>
+                                            {data.desc}
+                                        </Accordion.Body>
+                                    </Accordion.Item>
+    
+                                </Accordion>
+                            </Col>
+                            )
+                        })}
+                       
+                    </Row>
+                </Container>
+
+            </div>
+        </>
+
     );
 }
- 
+
 export default FaqComponent;
