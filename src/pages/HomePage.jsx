@@ -18,17 +18,17 @@ const HomePage = () => {
     const navigate = useNavigate()
     return (
         <div className="homepage">
-            <header className="w-100 min-vh-100 d-flex align-items-center">
+            <header className="w-100 min-vh-100 d-flex align-items-center overflow-hidden">
                 <Container>
                     <Row className="header-box d-flex align-items-center pt-lg-5">
                         <Col lg='6'>
-                            <h1 className="mb-4">Temukan <br /> <span>Bakat Kreatifmu </span> <br />Bersama Kami !
+                            <h1 className="mb-4 animate__animated animate__fadeInUp animated__delay-1s">Temukan <br /> <span>Bakat Kreatifmu </span> <br />Bersama Kami !
                             </h1>
-                            <p className="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam maiores, explicabo vitae non voluptate aliquid temporibus commodi impedit culpa eos?</p>
-                            <button className="btn btn-danger btn-lg  rounded-1 me-2 mb-xs-0 mb-2 ">Lihat Kelas</button>
-                            <button className="btn btn-outline-danger btn-lg  rounded-1 me-2 mb-xs-0 mb-2">Lihat Promo</button>
+                            <p className="mb-4  animate__animated animate__fadeInUp animated__delay-1s">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam maiores, explicabo vitae non voluptate aliquid temporibus commodi impedit culpa eos?</p>
+                            <button className="btn btn-danger btn-lg  rounded-1 me-2 mb-xs-0 mb-2  animate__animated animate__fadeInUp animated__delay-1s " onClick={()=>navigate('/kelas')}>Lihat Kelas</button>
+                            <button className="btn btn-outline-danger btn-lg  rounded-1 me-2 mb-xs-0 mb-2  animate__animated animate__fadeInUp animated__delay-1s">Lihat Promo</button>
                         </Col>
-                        <Col lg='6' className="pt-lg-0 pt-5">
+                        <Col lg='6' className="pt-lg-0 pt-5 animate__animated animate__fadeInUp">
                             <img src={HeroImage} alt="HeroImg" />
                         </Col>
                     </Row>
@@ -43,11 +43,11 @@ const HomePage = () => {
                         </Col>
 
                     </Row>
-                    <Row>
+                    <Row >
                         {kelasTerbaru.map((kelas) => {
                             return (
 
-                                <Col key={kelas.id} className="shadow rounded-1">
+                                <Col key={kelas.id} className="shadow rounded-1 " data-aos="fade-up" data-aos-duration='1000' data-aos-delay={kelas.delay}>
                                     <img src={kelas.image} alt="unsplash.com" className="mb-5 rounded-top" />
                                     <div className="star mb-2">
                                         <i className={kelas.star1}></i>
@@ -69,7 +69,7 @@ const HomePage = () => {
 
                     <Row>
                         <Col className=" text-center">
-                            <button className="btn btn-success btn-lg rounded-5" onClick={() => navigate('/kelas')}>Lihat Semua Kelas    <i className="fa-solid fa-chevron-right ms-1"></i></button>
+                            <button className="btn btn-success btn-lg rounded-5" data-aos="fade-up" data-aos-duration='1000'  onClick={() => navigate('/kelas')}>Lihat Semua Kelas    <i className="fa-solid fa-chevron-right ms-1"></i></button>
 
                         </Col>
                     </Row>
@@ -111,19 +111,19 @@ const HomePage = () => {
                             className="mySwiper"
                         >
                             {dataSwiper.map((data) => {
-                                return ( 
-                                <SwiperSlide key={data.i} className="shadow-sm">
-                                    <p className="desc">{data.desc}</p>
-                                    <div className="people">
-                                    <img src={data.image} alt="" />
-                                    <div className="">
-                                        <h5 className="mb-1">{data.name}</h5>
-                                        <p className="m-0 fw-bold">{data.skill}</p>
-                                    </div>
+                                return (
+                                    <SwiperSlide key={data.i} className="shadow-sm">
+                                        <p className="desc">{data.desc}</p>
+                                        <div className="people">
+                                            <img src={data.image} alt="" />
+                                            <div className="">
+                                                <h5 className="mb-1">{data.name}</h5>
+                                                <p className="m-0 fw-bold">{data.skill}</p>
+                                            </div>
 
-                                    </div>
+                                        </div>
 
-                                </SwiperSlide>
+                                    </SwiperSlide>
                                 )
                             })}
                         </Swiper>
@@ -131,8 +131,8 @@ const HomePage = () => {
                 </Container>
             </div>
             {/* section faq */}
-            <FaqComponent/>
-            <FooterComponent/>
+            <FaqComponent />
+            <FooterComponent />
         </div>
     );
 }

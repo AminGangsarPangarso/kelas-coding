@@ -1,7 +1,7 @@
 import {Routes,Route} from "react-router-dom"
 import NavbarComponent from "./components/NavbarComponent"
 import HomePage from "./pages/HomePage"
-// import FooterComponent from "./components/FooterComponent"
+import FooterComponent from "./components/FooterComponent"
 import KelasPage from "./pages/KelasPage"
 import SyaratKetenPage from "./pages/SyaratKetenPage"
 import TestimonialPage from "./pages/TestimonialPage"
@@ -19,7 +19,7 @@ function App() {
         <Route path="/faq" Component={FaqPage}/>
         <Route path="/testimonial" Component={TestimonialPage}/>
       </Routes>
-      {/* <FooterComponent/> */}
+      <FooterComponent/>
     </>
   )
 }
